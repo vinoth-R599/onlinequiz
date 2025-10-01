@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .empty-box {
+        width: 100%;
+        height: 100px;
+        border: 3px solid #000066;
+        background-color: lightblue;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 100px;
+        color: #000066;
+        animation: slideDown 1s ease-out;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .student-info {
+        max-width: 400px;
+        margin: auto;
+        background: lightblue;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+      .student-info h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #000066;
+        font-size: 1.5rem;
+      }
+      .student-info input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+      .student-info input:focus {
+        border-color: #000066;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 102, 0.3);
+      }
+      .student-info button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background: linear-gradient(90deg, #333, #444);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      .student-info button:hover {
+        background: linear-gradient(90deg, #444, #555);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="empty-box">Online Quiz</div>
+
+    <form
+      class="student-info"
+      action="select.html"
+      onsubmit="return showAlert()"
+    >
+      <h2>Student Login</h2>
+
+      <label for="name">Student Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+
+      <label for="id">Student ID:</label>
+      <input
+        type="text"
+        id="id"
+        name="id"
+        placeholder="Enter your student ID"
+        required
+      />
+
+      <button type="submit">Start Exam</button>
+    </form>
+
+    <script>
+      function showAlert() {
+        alert("Login successful!");
+        return true; // allows form to continue to select.html
+      }
+    </script>
+  </body>
+</html>
