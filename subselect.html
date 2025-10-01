@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Exam</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: lightblue;
+        color: #000066;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        padding: 30px 0;
+        border-bottom: 2px solid #000;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 120px); /* adjust for header height */
+      }
+      .exam-box {
+        background-color: lightblue;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+      }
+      .exam-box label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .exam-box select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .exam-box button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .exam-box button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Online Quiz</div>
+
+    <div class="container">
+      <div class="exam-box">
+        <label for="exam">Choose Subject:</label>
+        <select id="exam" name="exam">
+          <option value="">--Select Subject--</option>
+          <option value="discrete-math">DISCRETE MATHEMATICS</option>
+          <option value="software-engineering">SOFTWARE ENGINEERING</option>
+          <option value="dbms">DBMS</option>
+        </select>
+
+        <label for="quiz">Choose Quiz Number:</label>
+        <select id="quiz" name="quiz">
+          <option value="">--Select Quiz--</option>
+          <option value="1">QUIZ 1</option>
+          <option value="2">QUIZ 2</option>
+        </select>
+
+        <button type="button" onclick="startTest()">Take Test</button>
+      </div>
+    </div>
+
+    <script>
+      function startTest() {
+        const subject = document.getElementById('exam').value;
+        let quiz = document.getElementById('quiz').value;
+
+        if (subject === "" || quiz === "") {
+          alert("Please choose both exam subject and quiz number.");
+          return;
+        }
+
+        // Redirect to quiz.html with query parameters
+        window.location.href = quiz.html?subject=${encodeURIComponent(subject)}&quiz=${encodeURIComponent(quiz)};
+      }
+    </script>
+  </body>
+</html>
